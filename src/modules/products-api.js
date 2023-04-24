@@ -30,26 +30,22 @@ function fetchJson(url, options) {
     });
 }
 
-const getProducts = async ({ nameFilter, brandFilter, typeFilter } = {}) => {
-  let fnFilter = (i) => i;
-  const filters = ``;
+const getProducts = async ({ brandFilter, typeFilter } = {}) => {
+  let filters = ``;
   if (brandFilter) {
     filters += `&brand=${brandFilter}`;
   }
   if (typeFilter) {
     filters += `&product_type=${typeFilter}`;
   }
-  // Filtros não disponibilizados pela API
-  if (nameFilter) {
-    fnFilter = i.name && i.name.startsWith(nameFilter) ? 1 : 0;
-  }
-  const products = await fetchJson(`${baseUrl}/products.json`, {
-    mode: 'cors',
-  });
+  const products = await fetchJson(
+    `${baseUrl}/products.json${filters ? `?${filters}` : ''}`,
+    {
+      mode: 'cors',
+    }
+  );
 
-  const preparedProducts = products
-    .filter(fnFilter)
-    .map((p) => prepareProduct(p));
+  const preparedProducts = products.map((p) => prepareProduct(p));
   return preparedProducts;
 };
 

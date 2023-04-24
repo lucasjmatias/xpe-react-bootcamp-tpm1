@@ -10,34 +10,68 @@ import { productSorter } from './modules/utils.js';
   const typeElement = document.getElementById('type');
   const sorterElement = document.getElementById('sort');
 
-  nameElement.addEventListener('focusout', function (elm) {
+  nameElement.addEventListener('keydown', async function (elm) {
     renderProducts();
   });
 
-  sorterElement.addEventListener('change', function (elm) {
+  brandElement.addEventListener('change', async function (elm) {
+    await filterProducts();
+    renderProducts();
+  });
+
+  typeElement.addEventListener('change', async function (elm) {
+    await filterProducts();
+    renderProducts();
+  });
+
+  sorterElement.addEventListener('change', async function (elm) {
     renderProducts();
   });
 
   renderProducts();
 
   async function filterProducts() {
-    const nameFilter = nameElement.value || null;
     const brandFilter = brandElement.value || null;
     const typeFilter = typeElement.value || null;
-    products = await getProducts({ nameFilter, brandFilter, typeFilter });
+    products = await getProducts({ brandFilter, typeFilter });
   }
 
   function renderProducts() {
-    const sorterName = sorterElement.value;
-    console.log(productSorter(sorterName));
-    const sortedProducts = products.sort(productSorter(sorterName));
+    const nameFilter = nameElement.value;
+    let fnFilter = (i) => i;
+    // Filtros não disponibilizados pela API
+    if (nameFilter) {
+      fnFilter = (i) =>
+        i.name &&
+        i.name.trim().toLowerCase().startsWith(nameFilter.trim().toLowerCase())
+          ? 1
+          : 0;
+    }
 
-    console.log([...new Set(products.map((p) => p.product_type))]);
+    const sorterName = sorterElement.value;
+    const sortedProducts = products
+      .filter(fnFilter)
+      .sort(productSorter(sorterName));
 
     const productsHtml = sortedProducts
       .map((p) => renderProduct(p, true))
       .join('');
     const mainElement = document.getElementsByTagName('main')[0];
     mainElement.innerHTML = productsHtml;
+    const productElements = mainElement.getElementsByClassName('product');
+    for (const productElement of productElements) {
+      productElement.addEventListener('click', function () {
+        const detailElement = this.getElementsByClassName('product-details')[0];
+        console.log(detailElement.style);
+        if (
+          detailElement.style.display &&
+          detailElement.style.display.includes('none')
+        ) {
+          detailElement.style.display = 'inline';
+        } else {
+          detailElement.style.display = 'none';
+        }
+      });
+    }
   }
 })();

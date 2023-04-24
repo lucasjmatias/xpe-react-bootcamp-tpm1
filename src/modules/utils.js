@@ -29,7 +29,6 @@ const sorters = {
 };
 
 const productSorter = (sorterName) => {
-  console.log(sorterName, sorters[sorterName], sorters);
   return sorters[sorterName] || identity;
 };
 

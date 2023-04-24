@@ -23,7 +23,7 @@ const renderProduct = (product, renderDetail = false) => {
         ${
           renderDetail
             ? `
-            <section class="product-details">
+            <section class="product-details" style="display: none">
               <div class="detail-rows">
                 <div>Brand</div>
                 <div class="details-bar">
