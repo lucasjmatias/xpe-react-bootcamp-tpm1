@@ -24,7 +24,7 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
 
   > Relacionados aos campos **rating, price e name**, respectivamente.
 
-- [ ] Na apresentação para cada um dos produtos deve ser apresentada sua **imagem, o nome do produto abaixo da imagem, a marca e o preço**;
+- [x] Na apresentação para cada um dos produtos deve ser apresentada sua **imagem, o nome do produto abaixo da imagem, a marca e o preço**;
 
   > Conforme trecho de HTML abaixo:
 
