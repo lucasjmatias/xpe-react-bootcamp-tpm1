@@ -16,11 +16,11 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
   > **Rota**:  
   > http://makeup-api.herokuapp.com/api/v1/products.json
 
-- [ ] A aplicação deverá possuir **3 filtros**, sendo eles **Nome, Marca e Tipo**;
+- [x] A aplicação deverá possuir **3 filtros**, sendo eles **Nome, Marca e Tipo**;
 
   > Relacionados aos campos **name, brand e product_type**, respectivamente.
 
-- [ ] A aplicação deverá incluir a **ordenação** dos produtos na página por **Melhor Avaliados**, por **Menores Preços e Maiores Preços**, e por **A-Z e Z-A** relacionados;
+- [x] A aplicação deverá incluir a **ordenação** dos produtos na página por **Melhor Avaliados**, por **Menores Preços e Maiores Preços**, e por **A-Z e Z-A** relacionados;
 
   > Relacionados aos campos **rating, price e name**, respectivamente.
 
@@ -63,7 +63,7 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
 
   > **Exemplo:** Um price de 10.49 aplicado a um fator de 5,50, o produto apresentará o valor de R$ 57,70.
 
-- [ ] Ao clicar no produto seus detalhes como **Marca, Preço, Avaliação
+- [x] Ao clicar no produto seus detalhes como **Marca, Preço, Avaliação
       , Categoria e Tipo**;
 
   > Relacionados aos campos **brand, price, rating, category e product_type**, respectivamente.
@@ -123,7 +123,7 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
   </div>
   ```
 
-- [ ] A página inicial deverá carregar todos os produtos considerando a ordenação por **Melhor Avaliados**, não sendo necessário realizar nenhuma paginação e nenhum filtro.
+- [x] A página inicial deverá carregar todos os produtos considerando a ordenação por **Melhor Avaliados**, não sendo necessário realizar nenhuma paginação e nenhum filtro.
 
 ## Dicas:
 
