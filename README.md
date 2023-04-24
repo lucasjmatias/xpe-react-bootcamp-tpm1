@@ -6,12 +6,12 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
 
 ## Atividades
 
-- [ ] Implementar em JavaScript puro, HTML e CSS uma aplicação para apresentação do catálogo de produtos de maquiagem;
+- [x] Implementar em JavaScript puro, HTML e CSS uma aplicação para apresentação do catálogo de produtos de maquiagem;
 
   > **API**:  
-  > https://makeupa-pi.herokuapp.com/
+  > https://makeup-api.herokuapp.com/
 
-- [ ] Carregar as informações necessárias para a aplicação;
+- [x] Carregar as informações necessárias para a aplicação;
 
   > **Rota**:  
   > http://makeup-api.herokuapp.com/api/v1/products.json
@@ -59,7 +59,7 @@ Construção de uma aplicação de catálogo de produtos de maquiagem a ser cons
   </div>
   ```
 
-- [ ] Para o preço do produto deverá ser aplicado um fator de conversão de R$5,50 e exibido o seu preço com 2 casas decimais;
+- [x] Para o preço do produto deverá ser aplicado um fator de conversão de R$5,50 e exibido o seu preço com 2 casas decimais;
 
   > **Exemplo:** Um price de 10.49 aplicado a um fator de 5,50, o produto apresentará o valor de R$ 57,70.
 
