@@ -17,7 +17,9 @@ const renderProduct = (product, renderDetail = false) => {
           </h1>
           <div class="product-brands">
             <span class="product-brand background-brand">${brand}</span>
-            <span class="product-brand background-price">R$ ${price}</span>
+            <span class="product-brand background-price">R$ ${price.toFixed(
+              2
+            )}</span>
           </div>
         </section>
         ${
@@ -33,7 +35,7 @@ const renderProduct = (product, renderDetail = false) => {
               <div class="detail-rows">
                 <div>Price</div>
                 <div class="details-bar">
-                  <div class="details-bar-bg">R$ ${price}</div>
+                  <div class="details-bar-bg">R$ ${price.toFixed(2)}</div>
                 </div>
               </div>
               <div class="detail-rows">

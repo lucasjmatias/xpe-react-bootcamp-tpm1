@@ -7,7 +7,7 @@ const prepareProduct = (product) => {
   preparedProduct.image_link = product.image_link;
   preparedProduct.name = product.name || '';
   preparedProduct.brand = product.brand || '';
-  preparedProduct.price = ((product.price || 0) * 5.5).toFixed(2);
+  preparedProduct.price = Number((product.price || 0) * 5.5);
   preparedProduct.category = product.category || '';
   preparedProduct.product_type = product.product_type || '';
   preparedProduct.rating = product.rating || 0;

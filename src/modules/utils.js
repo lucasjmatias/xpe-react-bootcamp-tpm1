@@ -12,7 +12,7 @@ const propertyCompare =
         ? b[propertyName].toLowerCase().trim()
         : b[propertyName];
     if (aProperty > bProperty) {
-      return desc ? 0 : 1;
+      return desc ? -1 : 1;
     }
     if (aProperty < bProperty) {
       return desc ? 1 : -1;
